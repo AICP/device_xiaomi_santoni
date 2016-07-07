@@ -383,4 +383,8 @@
     <!-- Support in Surfaceflinger for blur layers.
          NOTE: This requires additional hardware-specific code.
     <bool name="config_uiBlurEnabled">true</bool> -->
+
+   <!-- Should the pinner service pin the Camera application? -->
+   <bool name="config_pinnerCameraApp">true</bool>
+
 </resources>
