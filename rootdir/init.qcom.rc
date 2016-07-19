@@ -1041,3 +1041,14 @@ service logdumpd /system/bin/logcat -b all -v threadtime -D -w /dev/block/bootde
 # Logdumpd is enabled only for userdebug non-perf build
 on property:ro.logdumpd.enabled=1
     start logdumpd
+
+# Baseband VERSION
+on property:ro.baseband.unknown=1
+    start baseband-sh
+    setprop ro.baseband.unknown 0
+
+service baseband-sh /system/bin/sh /system/etc/set_baseband.sh
+    class late_start
+    user root
+    oneshot
+    disabled
