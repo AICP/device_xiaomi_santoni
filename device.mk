@@ -143,6 +143,10 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     liboverlay
 
+# Doze
+PRODUCT_PACKAGES += \
+    XiaomiDoze
+
 # Ebtables
 PRODUCT_PACKAGES += \
     ebtables \
