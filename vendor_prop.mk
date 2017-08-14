@@ -104,6 +104,7 @@ sdm.debug.disable_skip_validate=1 \
 debug.sf.recomputecrop=0 \
 ro.opengles.version=196610 \
 ro.qualcomm.cabl=0 \
+ro.sys.fw.dex2oat_thread_count=8 \
 ro.qualcomm.svi=0 \
 persist.debug.wfd.enable=1 \
 persist.hwc.enable_vds=1 \
