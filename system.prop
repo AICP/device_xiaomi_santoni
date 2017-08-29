@@ -97,6 +97,14 @@ persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
 
+# Hardware info
+ro.device.chipset=Qualcomm MSM8940 Snapdragon 435
+ro.device.cpu=Octa-core 1.4 GHz Cortex-A53
+ro.device.gpu=Qualcomm Adreno 505
+ro.device.rear_cam=13 MP
+ro.device.front_cam=5 MP
+ro.device.screen_res=720 x 1280 pixels
+
 # Media
 media.msm8956hw=0
 mm.enable.smoothstreaming=true
