@@ -2394,3 +2394,7 @@ case "$console_config" in
         echo "Enable console config to $console_config"
         ;;
 esac
+
+# Color LEDs
+chown system:system /sys/class/leds/*/brightness
+chown system:system /sys/class/leds/*/blink
