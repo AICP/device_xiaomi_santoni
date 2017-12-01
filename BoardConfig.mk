@@ -172,7 +172,7 @@ DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/hidl/manifest.xml
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/hidl/compatibility_matrix.xml
 
 # Filesystem
-TARGET_ANDROID_FILESYSTEM_CONFIG_H := $(LOCAL_PATH)/android_filesystem_config.h
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
 #Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
