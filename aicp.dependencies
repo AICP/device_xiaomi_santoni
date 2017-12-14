@@ -2,7 +2,7 @@
  {
    "repository": "hemantbeast/android_kernel_xiaomi_msm8937",
    "target_path": "kernel/xiaomi/msm8937",
-   "branch": "cm-14.1"
+   "branch": "n7.1"
  },
  {
    "repository": "AICP/proprietary_vendor_xiaomi",
