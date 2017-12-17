@@ -170,9 +170,6 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/hidl/compatibility_matrix.xml
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
-#Include path
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
-
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_santoni
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
