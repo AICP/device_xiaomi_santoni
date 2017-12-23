@@ -120,10 +120,6 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     Snap
 
-# Consumerir
-PRODUCT_PACKAGES += \
-    consumerir.default
-
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8937 \

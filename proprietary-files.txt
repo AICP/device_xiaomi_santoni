@@ -548,6 +548,10 @@ vendor/lib/libmmcamera_isp_wb40.so
 # Charger
 bin/hvdcp_opti
 
+# Consumer Ir
+lib/hw/consumerir.default.so
+lib64/hw/consumerir.default.so
+
 # DPM
 bin/dpmd
 etc/dpm/dpm.conf
