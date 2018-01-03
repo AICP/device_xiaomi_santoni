@@ -280,16 +280,16 @@ PRODUCT_COPY_FILES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    wificond \
-    wifilogd \
+    libcld80211 \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
+    wificond \
+    wifilogd \
     wpa_supplicant \
-    wpa_supplicant.conf \
-    wcnss_service
+    wpa_supplicant.conf
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
