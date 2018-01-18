@@ -111,12 +111,6 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
 
-# CMHW
-BOARD_USES_CYANOGEN_HARDWARE := true
-BOARD_HARDWARE_CLASS += \
-    hardware/cyanogen/cmhw \
-    device/xiaomi/santoni/cmhw
-
 # CNE / DPM
 BOARD_USES_QCNE := true
 
@@ -172,7 +166,7 @@ DEVICE_MANIFEST_FILE := $(LOCAL_PATH)/hidl/manifest.xml
 DEVICE_MATRIX_FILE := $(LOCAL_PATH)/hidl/compatibility_matrix.xml
 
 # Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 #Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
@@ -184,6 +178,10 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_santoni
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
+
+# Lineage Hardware
+BOARD_HARDWARE_CLASS += \
+    $(LOCAL_PATH)/lineagehw
 
 # Media
 TARGET_USES_MEDIA_EXTENSIONS := true
