@@ -132,6 +132,10 @@ PRODUCT_PACKAGES += \
     libmm-qcamera \
     Snap
 
+# Charger images
+PRODUCT_PACKAGES += \
+    charger_res_images
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8937 \
