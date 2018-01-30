@@ -264,18 +264,25 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     set_baseband.sh
 
-# RIL
-PRODUCT_PACKAGES += \
-    librmnetctl \
-    libcnefeatureconfig \
-    libxml2
-
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
     rcs_service_aidl.xml \
     rcs_service_api \
     rcs_service_api.xml
+
+# RIL
+PRODUCT_PACKAGES += \
+    librmnetctl \
+    libxml2 \
+    libprotobuf-cpp-full
+
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
