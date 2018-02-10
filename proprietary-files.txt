@@ -1,6 +1,4 @@
 # Audio
-lib/libDiracAPI_SHARED.so
-lib/soundfx/libdirac.so
 vendor/lib/libhwdaphal.so
 vendor/lib64/libhwdaphal.so
 
