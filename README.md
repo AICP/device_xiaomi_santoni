@@ -7,9 +7,9 @@
 | CPU                     | Octa-core 1.4 GHz Cortex-A53      |
 | Chipset                 | Qualcomm MSM8940 Snapdragon 435   |
 | GPU                     | Adreno 505                        |
-| Memory                  | 2/3 GB                            |
+| Memory                  | 2/3/4 GB                            |
 | Shipped Android Version | 6.0.1                             |
-| Storage                 | 16/32 GB                          |
+| Storage                 | 16/32/64 GB                          |
 | MicroSD                 | Up to 256 GB                      |
 | Battery                 | 4100 mAh (non-removable)          |
 | Dimensions              | 139 x 69 x 8.65 mm                |
