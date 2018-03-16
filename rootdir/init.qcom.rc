@@ -570,12 +570,6 @@ service fmhal_service /system/bin/fmhal_service
     group bluetooth net_bt_admin net_admin
     disabled
 
-service config_bt_addr /system/vendor/bin/btnvtool -O
-    class core
-    user bluetooth
-    group bluetooth radio
-    oneshot
-
 service hciattach /system/vendor/bin/hci_qcomm_init -e
     class late_start
     user bluetooth
@@ -589,34 +583,6 @@ on property:bluetooth.hciattach=true
 
 on property:bluetooth.hciattach=false
     setprop bluetooth.status off
-
-service bt-dun /system/bin/dun-server /dev/smd7 /dev/rfcomm0
-    class late_start
-    user bluetooth
-    group bluetooth net_bt_admin inet
-    disabled
-    oneshot
-
-service bt-sap /system/bin/sapd 15
-    user bluetooth
-    group bluetooth net_bt_admin
-    class late_start
-    disabled
-    oneshot
-
-service btsnoop /system/bin/btsnoop
-   user bluetooth
-   group bluetooth net_bt_admin sdcard_rw sdcard_r media_rw
-   class late_start
-   disabled
-   oneshot
-
-service ftmd /system/bin/logwrapper /system/bin/ftmdaemon
-    class late_start
-    user root
-    group bluetooth net_bt_admin misc net_bt_stack diag net_bt
-    disabled
-    oneshot
 
 service bridgemgrd /system/bin/bridgemgrd
     class late_start
