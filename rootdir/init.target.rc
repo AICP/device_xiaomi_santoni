@@ -35,7 +35,6 @@ on early-init
 
 on fs
     mount_all /vendor/etc/fstab.qcom
-    swapon_all /vendor/etc/fstab.qcom
 
     mkdir /persist/data 0700 system system
     mkdir /persist/bms 0700 root system
@@ -107,9 +106,6 @@ service qrngp /system/bin/qrngp -f
    group root
    oneshot
    disabled
-
-on property:sys.boot_completed=1
-   start qrngp
 
 service qseecomd /vendor/bin/qseecomd
    class core
@@ -409,3 +405,9 @@ service ppd /vendor/bin/mm-pp-dpps
     group system graphics
     socket pps stream 0660 system system
     disabled
+
+on property:sys.boot_completed=1
+    start qrngp
+
+    # Enable ZRAM on boot_complete
+    swapon_all /vendor/etc/fstab.qcom
