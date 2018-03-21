@@ -245,6 +245,9 @@ PRODUCT_PACKAGES += \
     libstagefrighthw
 
 # Power
+PRODUCT_PACKAGES += \
+    power.qcom
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
