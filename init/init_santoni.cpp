@@ -33,9 +33,6 @@
 #include <sstream>
 #include <sys/sysinfo.h>
 
-#define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
-#include <sys/_system_properties.h>
-
 #include <android-base/properties.h>
 #include <android-base/logging.h>
 
@@ -51,23 +48,6 @@ char const *heapsize;
 char const *heapminfree;
 char const *heapmaxfree;
 char const *large_cache_height;
-
-void property_override(char const prop[], char const value[])
-{
-    prop_info *pi;
-
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
-        __system_property_update(pi, value, strlen(value));
-    else
-        __system_property_add(prop, strlen(prop), value, strlen(value));
-}
-
-void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
-{
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
-}
 
 static void init_alarm_boot_properties()
 {
@@ -158,9 +138,4 @@ void vendor_load_properties()
     property_set("ro.hwui.text_large_cache_height", large_cache_height);
 
     property_set("ro.baseband.unknown", "1");
-
-    property_override_dual("ro.product.model", "ro.vendor.product.model", "Redmi 4X");
-    property_override_dual("ro.product.device", "ro.vendor.product.device", "santoni");
-    property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "Xiaomi/santoni/santoni:7.1.2/N2G47H/8.3.22:user/release-keys");
-    property_override("ro.build.description", "santoni-user 7.1.2 N2G47H 8.3.22 release-keys");
 }
