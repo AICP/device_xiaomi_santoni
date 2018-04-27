@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c7115158_945d00de",
+        "filename": "aicp.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 683
+      },
+      "writtenOn": "2018-04-27T19:04:02Z",
+      "side": 1,
+      "message": "Shouldn\u0027t \" :\u003d \" ?",
+      "range": {
+        "startLine": 40,
+        "startChar": 17,
+        "endLine": 40,
+        "endChar": 18
+      },
+      "revId": "9130456608836141eab131449d10e06d472869ef",
+      "serverId": "9f904cbb-a964-4fab-a7dc-5cfc4d5c238b",
+      "unresolved": false
+    }
+  ]
+}
