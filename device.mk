@@ -92,8 +92,7 @@ PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcomvisualizer \
     libqcomvoiceprocessing \
-    libqcompostprocbundle \
-    tinymix
+    libqcompostprocbundle
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
