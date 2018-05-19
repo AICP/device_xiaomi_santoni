@@ -205,6 +205,7 @@ vendor/lib/libchromatix_ov5675_ofilm_hfr_60_3a.so
 vendor/lib/libchromatix_ov5675_ofilm_hfr_90.so
 vendor/lib/libchromatix_ov5675_ofilm_hfr_90_3a.so
 vendor/lib/libchromatix_ov5675_ofilm_liveshot.so
+vendor/lib/libchromatix_ov5675_ofilm_postproc.so
 vendor/lib/libchromatix_ov5675_ofilm_preview.so
 vendor/lib/libchromatix_ov5675_ofilm_snapshot.so
 vendor/lib/libchromatix_ov5675_ofilm_zsl_preview_3a.so

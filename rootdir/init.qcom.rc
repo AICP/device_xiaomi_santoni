@@ -34,6 +34,10 @@ on early-init
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
 
+    # Setup zram options
+    write /sys/block/zram0/comp_algorithm lz4
+    write /proc/sys/vm/page-cluster 0
+
 on init
     # Set permissions for persist partition
     mkdir /persist 0771 root system
@@ -166,6 +170,10 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
     # Fingerprint
+    # Goodix Fingerprint
+    chown system system /dev/goodix_fp
+    chmod 0644 /dev/goodix_fp
+
     setprop persist.sys.fp.vendor none
     start gx_fpd
 
@@ -180,6 +188,10 @@ on boot
     chown system system /sys/devices/soc/soc:fpc1020/wakeup_enable
     chmod 0660 /sys/devices/soc/soc:fpc1020/wakeup_enable
 
+    # Glove Mode
+    chown system system /sys/class/tp_glove/device/glove_enable
+    chmod 0660 /sys/class/tp_glove/device/glove_enable
+
     # Notification LED
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/green/blink
@@ -187,6 +199,10 @@ on boot
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
+
+    # IR blaster
+    chown root system /sys/class/leds/infrared/transmit
+    chown root system /sys/class/leds/infrared/brightness
 
     # Allow access to emmc rawdump block partition and dload sysfs node
     chown root system /dev/block/bootdevice/by-name/rawdump -p /dev/block/
@@ -206,9 +222,6 @@ on boot
 
     # Create directory used for display
     mkdir /persist/display 0770 system graphics
-
-    # Wifi firmware reload path
-    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -335,6 +348,9 @@ on post-fs-data
     #Create directory for FOTA
     mkdir /data/fota 0771
     chown system system /data/fota
+
+    #Create directory for hostapd
+    mkdir /data/hostapd 0770 system wifi
 
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
@@ -555,7 +571,7 @@ on property:wc_transport.start_fmhci=true
 on property:wc_transport.start_fmhci=false
     stop fmhal_service
 
-service start_hci_filter /system/vendor/bin/wcnss_filter
+service start_hci_filter /system/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth diag system wakelock
@@ -771,6 +787,11 @@ service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
     user root
     disabled
+    oneshot
+
+service baseband-sh /vendor/bin/init.baseband.sh
+    class late_start
+    user root
     oneshot
 
 on property:sys.boot_completed=1
@@ -1027,14 +1048,3 @@ service logdumpd /system/bin/logcat -b all -v threadtime -D -w /dev/block/bootde
 # Logdumpd is enabled only for userdebug non-perf build
 on property:ro.logdumpd.enabled=1
     start logdumpd
-
-# Baseband VERSION
-on property:ro.baseband.unknown=1
-    start baseband-sh
-    setprop ro.baseband.unknown 0
-
-service baseband-sh /system/bin/sh /system/etc/set_baseband.sh
-    class late_start
-    user root
-    oneshot
-    disabled

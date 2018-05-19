@@ -35,7 +35,6 @@
 
 #include <android-base/properties.h>
 #include <android-base/logging.h>
-
 #include "vendor_init.h"
 #include "property_service.h"
 #include "util.h"
@@ -136,6 +135,4 @@ void vendor_load_properties()
     property_set("ro.hwui.text_small_cache_height", "1024");
     property_set("ro.hwui.text_large_cache_width", "2048");
     property_set("ro.hwui.text_large_cache_height", large_cache_height);
-
-    property_set("ro.baseband.unknown", "1");
 }

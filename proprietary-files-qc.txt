@@ -192,14 +192,6 @@ vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 
-# FaceUnlock
--app/FaceLock/FaceLock.apk
-lib/libfilterpack_facedetect.so
-lib64/libfacenet.so
-lib64/libfilterpack_facedetect.so
-lib/libfrsdk.so
-lib64/libfrsdk.so
-
 # FM - from TA-1021 - OPR1.170623.026
 -lib/vendor.qti.hardware.fm@1.0.so
 -lib64/vendor.qti.hardware.fm@1.0.so
@@ -221,6 +213,7 @@ framework/izat.xt.srv.jar
 lib64/liblocationservice_jni.so
 lib64/libxt_native.so
 lib64/vendor.qti.gnss@1.0.so
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/loc_launcher
 vendor/bin/lowi-server

@@ -91,12 +91,6 @@
     <!-- Set to true to add links to Cell Broadcast app from Settings and MMS app. -->
     <bool name="config_cellBroadcastAppLinks">true</bool>
 
-    <!-- Control the behavior when the user panic presses the back button.
-            0 - Nothing
-            1 - Go to home
-    -->
-    <integer name="config_backPanicBehavior">0</integer>
-
     <!-- Wifi driver supports batched scan -->
     <bool translatable="false" name="config_wifi_batched_scan_supported">true</bool>
 
@@ -218,9 +212,6 @@
     <!-- Flag specifying whether VoLTE is available on device -->
     <bool name="config_device_volte_available">true</bool>
 
-    <!-- VoLTE provisioning
-    <bool name="config_carrier_volte_provisioned">true</bool> -->
-
     <!-- Flag specifying whether VoLTE should be available for carrier: independent of
          carrier provisioning. If false: hard disabled. If true: then depends on carrier
          provisioning, availability etc -->
@@ -233,9 +224,6 @@
          state changes. Voice radio tech change will always trigger an update of
          phone object irrespective of this config -->
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
-
-    <!-- Flag indicating if the speed up audio on mt call code should be executed
-    <bool name="config_speed_up_audio_on_mt_calls">true</bool> -->
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">4</integer>
@@ -275,6 +263,7 @@
          Specify the component name or an empty string if none.
          Note that doze dreams are not subject to the same start conditions as ordinary dreams.
          Doze dreams will run whenever the power manager is in a dozing state. -->
+    <string name="config_dozeComponent" translatable="false">com.android.systemui/com.android.systemui.doze.DozeService</string>
 
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
@@ -295,13 +284,6 @@
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
     <integer name="config_screenBrightnessDoze">17</integer>
-    <string name="config_dozeComponent" translatable="false">com.android.systemui/com.android.systemui.doze.DozeService</string>
-
-    <!-- Whether the always on display mode is available. -->
-    <bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
-
-    <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
-    <bool name="config_displayBlanksAfterDoze">false</bool>
 
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
@@ -315,10 +297,6 @@
          correctly use them when installed on your device.  Otherwise, keep this disabled
          so that applications can still use their own mechanisms. -->
     <bool name="config_enableAutoPowerModes">true</bool>
-
-    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
-         in hardware. -->
-    <bool name="config_setColorTransformAccelerated">true</bool>
 
    <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
@@ -357,8 +335,12 @@
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
 
-    <!-- Whether notify fingerprint client of successful cancelled authentication
-    <bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool> -->
+    <!-- Support in Surfaceflinger for blur layers.
+         NOTE: This requires additional hardware-specific code. -->
+    <!--<bool name="config_uiBlurEnabled">true</bool>-->
+
+    <!-- Whether notify fingerprint client of successful cancelled authentication -->
+    <!--<bool name="config_notifyClientOnFingerprintCancelSuccess">true</bool>-->
 
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
@@ -386,9 +368,9 @@
          config to 7. -->
     <integer name="config_deviceHardwareKeys">83</integer>
 
-    <!-- Support in Surfaceflinger for blur layers.
-         NOTE: This requires additional hardware-specific code.
-    <bool name="config_uiBlurEnabled">true</bool> -->
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
 
    <!-- Should the pinner service pin the Camera application? -->
    <bool name="config_pinnerCameraApp">true</bool>
