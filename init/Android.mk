@@ -22,7 +22,7 @@ LOCAL_C_INCLUDES := \
     system/core/init \
     external/selinux/libselinux/include
 
-LOCAL_STATIC_LIBRARIES := libbase
+LOCAL_STATIC_LIBRARIES := libbase libselinux
 LOCAL_MODULE := libinit_santoni
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := init_santoni.cpp
