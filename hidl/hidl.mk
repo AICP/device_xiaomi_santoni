@@ -64,7 +64,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service-custom
+    android.hardware.biometrics.fingerprint@2.0-service.xiaomi_santoni
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
