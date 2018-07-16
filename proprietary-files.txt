@@ -458,3 +458,7 @@ etc/firmware/cardapp.mdt
 etc/firmware/ice40.bin
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
+
+# Touchscreen config | MIUI 10 8.7.12
+etc/ft5336_biel_1080p.ini
+etc/ft5336_oufei_720p.ini
