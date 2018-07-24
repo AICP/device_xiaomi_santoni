@@ -221,6 +221,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     frameworks/base/data/sounds/effects/material/ogg/WirelessChargingStarted.ogg:system/media/audio/ui/BatteryPlugged.ogg
 
+# Native libraries
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/public.libraries.txt:system/vendor/etc/public.libraries.txt
+
 # Netutils
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
