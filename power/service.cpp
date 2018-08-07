@@ -51,7 +51,7 @@ int main() {
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    status = service->registerAsSystemService();
+    status = service->registerAsService();
     if (status != OK) {
         ALOGE("Could not register service for Power HAL Iface (%d).", status);
         goto shutdown;
