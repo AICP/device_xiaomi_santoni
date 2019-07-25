@@ -157,6 +157,7 @@
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_BROADSIDE" acdb_id="121"/>
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_NS_BROADSIDE" acdb_id="120"/>
         <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_NS_BROADSIDE" acdb_id="105"/>
+        <device name="SND_DEVICE_IN_SPEAKER_DMIC_AEC_BROADSIDE" acdb_id="121"/>
         <device name="SND_DEVICE_IN_HANDSET_QMIC" acdb_id="125"/>
         <device name="SND_DEVICE_IN_SPEAKER_QMIC_AEC" acdb_id="126"/>
         <device name="SND_DEVICE_IN_SPEAKER_QMIC_NS" acdb_id="127"/>
@@ -169,6 +170,10 @@
         <device name="SND_DEVICE_IN_UNPROCESSED_QUAD_MIC" acdb_id="146"/>
         <device name="SND_DEVICE_IN_UNPROCESSED_HEADSET_MIC" acdb_id="147"/>
     </acdb_ids>
+
+    <!-- microphone fix -->
+        <device name="SND_DEVICE_IN_HANDSET_MIC" acdb_id="1"/>
+        <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" acdb_id="1"/>
     
     <backend_names>
         <device name="SND_DEVICE_OUT_HEADPHONES" interface="PRI_MI2S_RX"/>
