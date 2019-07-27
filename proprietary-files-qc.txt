@@ -68,7 +68,7 @@ vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcomvisualizer.so
 vendor/lib64/soundfx/libqcvirt.so
 
-# Bluetooth - from sakura
+# Bluetooth - from Panther
 lib/com.qualcomm.qti.bluetooth_audio@1.0.so
 lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/bin/btnvtool
@@ -81,7 +81,6 @@ vendor/lib/libbtnv.so
 vendor/lib/libbt-hidlclient.so
 vendor/lib/libbthost_if.so
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so
-vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so
 vendor/lib64/libbtnv.so
 vendor/lib64/libbt-hidlclient.so
 vendor/lib64/libbthost_if.so
@@ -93,7 +92,7 @@ vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
 lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
 
-# CNE - from sakura
+# CNE - from Panther
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
 -framework/cneapiclient.jar
@@ -185,7 +184,7 @@ vendor/lib64/vendor.qti.latency@2.0.so
 # Charger - from TA-1024
 vendor/bin/hvdcp_opti
 
-# DPM - from sakura
+# DPM - from Panther
 bin/dpmd
 etc/dpm/dpm.conf
 etc/init/dpmd.rc
@@ -566,7 +565,7 @@ vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
 vendor/lib64/vendor.qti.hardware.perf@1.0.so
 
-# Peripheral manager - from sakura
+# Peripheral manager - from Panther
 vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
@@ -601,7 +600,7 @@ vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so
 vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
-# QMI - from sakura
+# QMI - from Panther
 lib/libdiag_system.so
 lib/libqmi_cci_system.so
 lib64/libdiag_system.so
@@ -639,7 +638,7 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmiservices.so
 
-# Radio - from sakura
+# Radio - from Panther
 -app/QtiTelephonyService/QtiTelephonyService.apk
 etc/permissions/lpa.xml
 etc/permissions/telephonyservice.xml
@@ -659,7 +658,7 @@ vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
-vendor/etc/data/netmgr_config.xml|35c4f95225b7687258a1272142b6650c2977a2f0
+vendor/etc/data/netmgr_config.xml|5f1e66147d95353b93f25860eb8b0491b259787d
 vendor/etc/init/qcrild.rc
 vendor/lib/libconfigdb.so
 vendor/lib/liblqe.so
@@ -734,7 +733,7 @@ vendor/radio/qcril_database/qcril.db
 # Radio - QTI Extension - from sakura
 -framework/qti-telephony-common.jar
 
-# Radio - IMS - from sakura
+# Radio - IMS - from Panther
 -app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
 etc/permissions/com.qualcomm.qti.imscmservice.xml
@@ -879,7 +878,7 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# Wi-Fi - from sakura
+# Wi-Fi - from Panther
 vendor/bin/wcnss_service
 
 # WiFi Display - from TA-1024
