@@ -1,0 +1,37 @@
+[
+  {
+    "repository":  "hemantbeast/android_kernel_xiaomi_santoni",
+    "target_path": "kernel/xiaomi/santoni",
+    "branch":      "p9.0"
+  },
+  {
+    "repository":  "AICP/proprietary_vendor_xiaomi",
+    "target_path": "vendor/xiaomi",
+    "branch":      "p9.0"
+  },
+  {
+    "repository":  "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "branch":      "lineage-16.0"
+  },
+  {
+    "repository":  "LineageOS/android_external_ant-wireless_ant_native",
+    "target_path": "external/ant-wireless/ant_native",
+    "branch":      "lineage-16.0"
+  },
+  {
+    "repository":  "LineageOS/android_external_ant-wireless_ant_service",
+    "target_path": "external/ant-wireless/ant_service",
+    "branch":      "lineage-16.0"
+  },
+  {
+    "repository":  "LineageOS/android_external_ant-wireless_antradio-library",
+    "target_path": "external/ant-wireless/antradio-library",
+    "branch":      "lineage-16.0"
+  },
+  {
+    "repository":  "LineageOS/android_hardware_qcom_fm",
+    "target_path": "hardware/qcom/fm",
+    "branch":      "lineage-16.0"
+  }
+]

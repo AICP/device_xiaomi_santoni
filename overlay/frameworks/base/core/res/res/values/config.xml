@@ -599,4 +599,50 @@
          or a single SIM device can have 1 phones/logical modems, but 2 physical slots (one eSIM
          and one pSIM) -->
     <integer name="config_num_physical_slots">2</integer>
+	
+	<!-- Default value for proximity check on screen wake
+         NOTE ! - Enable for devices that have a fast response
+         proximity sensor (ideally < 300ms) -->
+    <bool name="config_proximityCheckOnWake">false</bool>
+
+    <!-- Hardware keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareKeys">83</integer>
+
+    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareWakeKeys">64</integer>
+
+    <!-- Default values for LiveDisplay -->
+    <bool name="config_defaultColorEnhancement">false</bool>
+
+    <!-- Whether device needs to wait for Qualcomm MPCTL service to start
+         before setting power profiles on boot. -->
+    <bool name="config_waitForMpctlOnBoot">true</bool>
+	
+    <!-- Default wi-fi hotspot ssid -->
+    <string name="config_wifiHotSpotSsid" translatable="false">Redmi</string>
+	
+    <!-- Default wi-fi direct name -->
+    <string name="config_wifiDirectName" translatable="false">Redmi</string>
 </resources>
