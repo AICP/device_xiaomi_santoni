@@ -28,6 +28,10 @@ TARGET_KERNEL_SOURCE 		:= kernel/xiaomi/santoni
 TARGET_KERNEL_CONFIG 		:= santoni_defconfig
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_EXFAT_DRIVER		:= sdfat
+TARGET_KERNEL_CLANG_COMPILE	:= true
+TARGET_KERNEL_CLANG_VERSION	:= 9.0.5
+KBUILD_COMPILER_STRING		:= Android (5696680 based on r353983e) clang version 9.0.5
+export KBUILD_COMPILER_STRING
 
 # Architecture
 TARGET_ARCH 	    	:= arm64
