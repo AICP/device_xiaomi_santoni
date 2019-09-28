@@ -293,3 +293,6 @@ wifi.interface=wlan0
 # UI
 PRODUCT_PROPERTY_OVERRIDES += \
 sys.use_fifo_ui=1
+
+# Netflix
+ro.netflix.bsp_rev=Q660-13149-1
