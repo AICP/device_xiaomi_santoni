@@ -245,6 +245,19 @@ function configure_read_ahead_kb_values() {
         echo 512 > /sys/block/dm-1/queue/read_ahead_kb
         echo 512 > /sys/block/dm-2/queue/read_ahead_kb
     fi
+
+   # Internal Storage
+   echo "bfq" > /sys/block/mmcblk0/queue/scheduler
+   echo "bfq" > /sys/block/mmcblk0rpmb/queue/scheduler
+   echo 0 > /sys/block/mmcblk0/queue/iosched/slice_idle
+   echo 0 > /sys/block/mmcblk0rpmb/queue/iosched/slice_idle
+
+   # External Storage
+   if [ -d /sys/block/mmcblk1 ];
+   then
+      echo "bfq" > /sys/block/mmcblk1/queue/scheduler
+      echo 0 > /sys/block/mmcblk1/queue/iosched/slice_idle
+   fi
 }
 
 function disable_core_ctl() {
