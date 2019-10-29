@@ -151,7 +151,7 @@ ro.vendor.qti.sys.fw.trim_cache_percent=100
 ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
 
 #system props for time-services
-persist.timed.enable=true
+persist.vendor.delta_time.enable=true
 
 # IMS
 service.qti.ims.enabled=1
@@ -174,21 +174,22 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.default_network=20,20
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
-persist.rild.nitz_plmn=
-persist.rild.nitz_long_ons_0=
-persist.rild.nitz_long_ons_1=
-persist.rild.nitz_long_ons_2=
-persist.rild.nitz_long_ons_3=
-persist.rild.nitz_short_ons_0=
-persist.rild.nitz_short_ons_1=
-persist.rild.nitz_short_ons_2=
-persist.rild.nitz_short_ons_3=
+persist.vendor.radio.nitz_plmn=
+persist.vendor.radio.nitz_lons_0=
+persist.vendor.radio.nitz_lons_1=
+persist.vendor.radio.nitz_lons_2=
+persist.vendor.radio.nitz_lons_3=
+persist.vendor.radio.nitz_sons_0=
+persist.vendor.radio.nitz_sons_1=
+persist.vendor.radio.nitz_sons_2=
+persist.vendor.radio.nitz_sons_3=
 persist.radio.multisim.config=dsds
 persist.vendor.radio.apm_sim_not_pwdn=1
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.report_codec=1
 persist.vendor.radio.sib16_support=1
+persist.vendor.radio.aosp_usr_pref_sel=true
 ril.ecclist=000,08,100,101,102,110,112,118,119,120,122,911,999
 ril.subscription.types=NV,RUIM
 telephony.lteOnCdmaDevice=1
