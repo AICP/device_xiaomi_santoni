@@ -34,6 +34,16 @@
 #include "list.h"
 #include <log/log.h>
 
+int init_list_head(struct list_node *head)
+{
+    if (head == NULL)
+        return -1;
+
+    memset(head, 0, sizeof(*head));
+
+    return 0;
+}
+
 struct list_node *add_list_node(struct list_node *head, void *data)
 {
     /* Create a new list_node. And put 'data' into it. */
@@ -54,6 +64,11 @@ struct list_node *add_list_node(struct list_node *head, void *data)
     head->next = new_node;
 
     return new_node;
+}
+
+int is_list_empty(struct list_node *head)
+{
+    return (head == NULL || head->next == NULL);
 }
 
 /*
@@ -90,6 +105,22 @@ int remove_list_node(struct list_node *head, struct list_node *del_node)
     }
 
     return 0;
+}
+
+void dump_list(struct list_node *head)
+{
+    struct list_node *current_node = head;
+
+    if (head == NULL)
+        return;
+
+    ALOGV("List:\n");
+
+    while ((current_node = current_node->next)) {
+        if (current_node->dump) {
+            current_node->dump(current_node->data);
+        }
+    }
 }
 
 struct list_node *find_node(struct list_node *head, void *comparison_data)
