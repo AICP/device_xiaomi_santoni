@@ -39,6 +39,13 @@ vendor.voice.voip.conc.disabled=true \
 ro.config.vc_call_vol_steps=8 \
 ro.config.media_vol_steps=20
 
+# ADB at boot
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.service.adb.enable=1 \
+persist.service.debuggable=1 \
+persist.sys.usb.config=mtp,adb \
+ro.adb.secure=0
+
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive \
