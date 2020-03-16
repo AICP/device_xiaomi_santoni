@@ -19,6 +19,7 @@ property Name is called. -->
 
                 <!--System Properties -->
                 <Prop Name="ro.vendor.qti.sys.fw.bservice_age" Value="5000" />
+                <Prop Name="ro.vendor.qti.sys.fw.bg_apps_limit" Value="38" />
                 <Prop Name="ro.vendor.qti.sys.fw.bservice_limit" Value="5" />
                 <Prop Name="ro.vendor.qti.sys.fw.bservice_enable" Value="true" />
                 <Prop Name="ro.vendor.qti.sys.fw.use_trim_settings" Value="true" />
