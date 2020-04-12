@@ -7,6 +7,7 @@ allow system_app sysfs_vibrator:dir search;
 allow system_app sysfs_vibrator:file { getattr open read write };
 allow system_app persist_camera_prop:file { open read };
 allow system_app fm_prop:property_service set;
+allow system_app hal_rcsservice:binder { call transfer };
 allow system_app sysfs_headphone_gain:file rw_file_perms;
 allow system_app sysfs_headphone_gain:file { getattr open read write };
 allow system_app sysfs_mic_gain:file rw_file_perms;
