@@ -19,7 +19,10 @@
 set -e
 
 DEVICE=santoni
+DEVICE_BRINGUP_YEAR=2016
 VENDOR=xiaomi
+
+INITIAL_COPYRIGHT_YEAR=2018
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -34,37 +37,31 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Default to sanitizing the vendor folder before extraction
-CLEAN_VENDOR=true
+# Initialize the helper for common
+setup_vendor "$VENDOR" "$AICP_ROOT" true
 
-while [ "$1" != "" ]; do
-    case $1 in
-        -n | --no-cleanup )     CLEAN_VENDOR=false
-                                ;;
-        -s | --section )        shift
-                                SECTION=$1
-                                CLEAN_VENDOR=false
-                                ;;
-        * )                     SRC=$1
-                                ;;
-    esac
-    shift
-done
+# Copyright headers and guards
+write_headers "santoni"
 
-if [ -z "$SRC" ]; then
-    SRC=adb
+# The standard common blobs
+write_makefiles "$MY_DIR"/proprietary-files.txt true
+echo "" >> "$PRODUCTMK"
+write_makefiles "$MY_DIR"/proprietary-files-qc.txt true
+
+# We are done!
+write_footers
+
+if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
+    # Reinitialize the helper for device
+    INITIAL_COPYRIGHT_YEAR="$DEVICE_BRINGUP_YEAR"
+    setup_vendor "$DEVICE" "$VENDOR" "$AICP_ROOT" false
+
+    # Copyright headers and guards
+    write_headers
+
+    # The standard device blobs
+    write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt true
+
+    # We are done!
+    write_footers
 fi
-
-# Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$AICP_ROOT" false "$CLEAN_VENDOR"
-
-extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
-
-# Hax for cam configs
-
-CAMERA2_SENSOR_MODULES="$AICP_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libmmcamera2_sensor_modules.so
-
-sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
-
-"$MY_DIR"/setup-makefiles.sh
