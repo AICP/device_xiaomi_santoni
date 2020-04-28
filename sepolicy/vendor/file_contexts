@@ -71,6 +71,11 @@
 # USB force fastcharge
 /sys/kernel/fast_charge/force_fast_charge                                     u:object_r:sysfs_fcharge:s0
 
+# Audio gains
+/sys/kernel/sound_control/headphone_gain                               u:object_r:sysfs_headphone_gain:s0
+/sys/kernel/sound_control/mic_gain                                     u:object_r:sysfs_mic_gain:s0
+/sys/kernel/sound_control/speaker_gain                                 u:object_r:sysfs_speaker_gain:s0
+
 # Vibration
 /sys/class/timed_output/vibrator/vmax_mv            u:object_r:sysfs_vibrator:s0
 /sys/class/timed_output/vibrator/vtg_level           u:object_r:sysfs_vibrator:s0

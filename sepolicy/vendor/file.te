@@ -32,6 +32,9 @@ type sysfs_dt2w, sysfs_type, fs_type;
 type sysfs_kcal, fs_type, sysfs_type;
 type sysfs_torch, fs_type, sysfs_type;
 type sysfs_fcharge, sysfs_type, fs_type;
+type sysfs_headphone_gain, sysfs_type, fs_type;
+type sysfs_mic_gain, sysfs_type, fs_type;
+type sysfs_speaker_gain, sysfs_type, fs_type;
 
 type sysfs_msm_subsys, sysfs_type, fs_type;
 
