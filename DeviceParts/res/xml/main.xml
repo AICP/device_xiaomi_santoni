@@ -32,6 +32,22 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="dirac"
+        android:title="@string/category_audio">
+        <Preference
+            android:key="device_dirac"
+            android:persistent="false"
+            android:icon="@drawable/ic_mi"
+            android:title="@string/dirac_title"
+            android:summary="@string/dirac_summary">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.aicp.device.dirac.DiracActivity"
+                android:targetPackage="com.aicp.device.dirac" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="category_audiogains"
         android:title="@string/category_audiogains">
         <com.aicp.device.HeadphoneGainPreference

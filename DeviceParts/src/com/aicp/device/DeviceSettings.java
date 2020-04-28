@@ -24,12 +24,14 @@ import androidx.preference.Preference;
 import androidx.preference.TwoStatePreference;
 
 import com.aicp.device.kcal.KCalSettingsActivity;
+import com.aicp.device.dirac.DiracActivity;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
     public static final String KEY_KCAL = "device_kcal";
+    public static final String KEY_DIRAC = "device_dirac";
     public static final String KEY_FASTCHARGE = "fastcharge";
     public static final String KEY_HEADPHONE_GAIN = "headphone_gain";
     public static final String KEY_MIC_GAIN = "mic_gain";
@@ -38,6 +40,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private VibratorStrengthPreference mVibratorStrength;
     private Preference mKcal;
+    private Preference mDirac;
 
     private HeadphoneGainPreference mHeadphoneGainPref;
     private MicGainPreference mMicGainPref;
@@ -56,15 +59,24 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         });
 
+        mDirac = findPreference(KEY_DIRAC);
+        mDirac.setOnPreferenceClickListener(preference -> {
+            Intent intent = new Intent(getActivity().getApplicationContext(), DiracActivity.class);
+            startActivity(intent);
+            return true;
+        });
+
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
 
         mFastChargeSwitch = (TwoStatePreference) findPreference(KEY_FASTCHARGE);
-        mFastChargeSwitch.setEnabled(FastChargeSwitch.isSupported());
-        mFastChargeSwitch.setChecked(FastChargeSwitch.isCurrentlyEnabled(this.getContext()));
-        mFastChargeSwitch.setOnPreferenceChangeListener(new FastChargeSwitch(getContext()));
+        if (mFastChargeSwitch != null) {
+            mFastChargeSwitch.setEnabled(FastChargeSwitch.isSupported());
+            mFastChargeSwitch.setChecked(FastChargeSwitch.isCurrentlyEnabled(this.getContext()));
+            mFastChargeSwitch.setOnPreferenceChangeListener(new FastChargeSwitch(getContext()));
+        }
 
         mHeadphoneGainPref = (HeadphoneGainPreference) findPreference(KEY_HEADPHONE_GAIN);
         mMicGainPref = (MicGainPreference) findPreference(KEY_MIC_GAIN);

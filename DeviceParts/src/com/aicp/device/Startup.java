@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.provider.Settings;
 
+import com.aicp.device.dirac.DiracUtils;
 import com.aicp.device.kcal.KcalUtils;
 import com.aicp.device.kcal.FileUtils;
 
@@ -40,6 +41,7 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
         restoreAfterUserSwitch(context);
+        new DiracUtils(context).onBootCompleted();
 
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
             mFileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
@@ -66,7 +68,6 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
             mFileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_HUE, HUE_DEFAULT));
         }
-
     }
 
     public static void restoreAfterUserSwitch(Context context) {
