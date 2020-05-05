@@ -313,3 +313,7 @@ ro.netflix.bsp_rev=Q660-13149-1
 
 # Sim Selection Fix
 persist.vendor.radio.aosp_usr_pref_sel=true
+
+# Usb
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.usb.config.extra=none
