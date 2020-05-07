@@ -56,7 +56,8 @@ vendor.qcom.bluetooth.soc=smd
 
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \
-sys.vendor.shutdown.waittime=500
+sys.vendor.shutdown.waittime=500 \
+ro.build.shutdown_timeout=0
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -77,7 +78,7 @@ persist.camera.HAL3.enabled=1
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.cne.feature=1 \
 persist.vendor.dpm.feature=0 \
-persist.vendor.sys.cnd.iwlan=1 \
+persist.vendor.sys.cnd.iwlan=1
 
 # Coresight
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -129,7 +130,7 @@ drm.service.enabled=true
 
 # Fingerprint
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.qfp=false \
+persist.qfp=false
 
 # Fm
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -198,7 +199,7 @@ vendor.enable_prefetch=1 \
 vendor.iop.enable_uxe=1 \
 vendor.iop.enable_prefetch_ofr=1 \
 vendor.perf.iop_v3.enable=1 \
-persist.vendor.qti.games.gt.prof=1 \
+persist.vendor.qti.games.gt.prof=1
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -246,6 +247,7 @@ persist.vendor.radio.apm_sim_not_pwdn=1 \
 persist.vendor.radio.multisim_switch_support=true \
 persist.radio.force_on_dc=true \
 persist.radio.ignore_dom_time=5 \
+persist.radio.ims.cmcc=true \
 persist.radio.multisim.config=dsds \
 persist.radio.schd.cache=3500 \
 persist.vendor.ims.dropset_feature=0 \
@@ -269,7 +271,6 @@ persist.vendor.radio.jbims=1 \
 persist.vendor.vt.supported=1 \
 service.qti.ims.enabled=1 \
 persist.radio.calls.on.ims=1 \
-persist.radio.aosp_usr_pref_sel=true \
 ro.telephony.default_network=22,22 \
 vendor.service.qti.ims.enabled=1 \
 persist.sys.fflag.override.settings_network_and_internet_v2=true
@@ -293,8 +294,7 @@ debug.sf.enable_gl_backpressure=1
 
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
-persist.delta_time.enable=true \
-persist.timed.enable=true
+persist.delta_time.enable=true
 
 # Tcp
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -317,3 +317,7 @@ persist.vendor.radio.aosp_usr_pref_sel=true
 # Usb
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.usb.config.extra=none
+
+# Wifi-Display
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.wfd.virtual=0
