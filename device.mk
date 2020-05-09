@@ -495,6 +495,7 @@ PRODUCT_PACKAGES += \
     libQWiFiSoftApCfg \
     libwpa_client \
     hostapd \
+    libqmiservices_shim \
     dhcpcd.conf \
     wificond \
     wpa_supplicant \
