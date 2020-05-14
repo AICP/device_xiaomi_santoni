@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-class FileUtils {
+public class FileUtils {
 
     private static boolean fileWritable(String filename) {
         return fileExists(filename) && new File(filename).canWrite();
@@ -33,7 +33,7 @@ class FileUtils {
         return new File(filename).exists();
     }
 
-    void setValue(String path, Boolean value) {
+    public void setValue(String path, Boolean value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
@@ -49,7 +49,7 @@ class FileUtils {
         }
     }
 
-    void setValue(String path, int value) {
+    public void setValue(String path, int value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
@@ -65,7 +65,7 @@ class FileUtils {
         }
     }
 
-    void setValue(String path, String value) {
+    public void setValue(String path, String value) {
         if (fileWritable(path)) {
             if (path == null) {
                 return;
