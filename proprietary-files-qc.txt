@@ -571,7 +571,7 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so|99296dc2831410fe
 vendor/radio/qcril_database/qcril.db|43b7d5e7ededc9cd5c0b1f7a8941d21d4eb0c9c1
 
 # Radio - from LA.UM.8.6.r1-03400-89xx.0
-product/framework/qti-telephony-common.jar|74adbf98e89531ac385ab5c4cea3c2549a0d24b0
+product/framework/qti-telephony-common.jar|7424feae55b2ff05706613cd202d5bcd77b4cf77
 vendor/bin/adpl|5fba0bb0fe9eb4a4aa232763be47afc0739cafd2
 -product/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|71d083671c3ea4cd5e287a63fb254bb0ab60ed20
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml|68901007ba1a48ceb1b728fc3b5483dd51b5e3a0
