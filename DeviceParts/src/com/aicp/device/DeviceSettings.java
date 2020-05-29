@@ -73,7 +73,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mFastChargeSwitch = (TwoStatePreference) findPreference(KEY_FASTCHARGE);
         if (mFastChargeSwitch != null) {
-            mFastChargeSwitch.setEnabled(FastChargeSwitch.isSupported());
+            mFastChargeSwitch.setEnabled(true);
             mFastChargeSwitch.setChecked(FastChargeSwitch.isCurrentlyEnabled(this.getContext()));
             mFastChargeSwitch.setOnPreferenceChangeListener(new FastChargeSwitch(getContext()));
         }
@@ -83,15 +83,15 @@ public class DeviceSettings extends PreferenceFragment implements
         mSpeakerGainPref = (SpeakerGainPreference) findPreference(KEY_SPEAKER_GAIN);
 
         if (mHeadphoneGainPref != null) {
-            mHeadphoneGainPref.setEnabled(HeadphoneGainPreference.isSupported());
+            mHeadphoneGainPref.setEnabled(true);
         }
 
         if (mMicGainPref != null) {
-            mMicGainPref.setEnabled(MicGainPreference.isSupported());
+            mMicGainPref.setEnabled(true);
         }
 
         if (mSpeakerGainPref != null) {
-            mSpeakerGainPref.setEnabled(SpeakerGainPreference.isSupported());
+            mSpeakerGainPref.setEnabled(true);
         }
     }
 
