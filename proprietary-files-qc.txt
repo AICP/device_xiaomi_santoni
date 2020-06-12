@@ -269,14 +269,6 @@ vendor/lib/egl/libq3dtools_esx.so|eadac5e71c56de30d581b74e201a059f1981737f
 vendor/lib/libc2d30-a3xx.so|649a72ba81703b671756590b4bfed7a9ce114815
 vendor/lib64/egl/libq3dtools_esx.so|018fe1485dda0596d30f0daae6709dbfca081f9b
 
-# Graphics (hwcomposer) - from LA.UM.8.6.r1-04000-89xx.0
-vendor/lib/hw/hwcomposer.msm8937.so|cc60bb83c34fe6084f9dfc774f12e0d33a0952e3
-vendor/lib/libsdmutils.so|b9b6ac4daea16684a47409625ede8009a4bf996a
-vendor/lib/libsdmcore.so|c40edce1e414ffef5e8967a29efa49c091c6cd88
-vendor/lib64/hw/hwcomposer.msm8937.so|7da1e99a3c6643764160f54f242e5a204b82cfbc
-vendor/lib64/libsdmutils.so|b5e3e1668ec82c10e74da549f5de6c91305b4d3c
-vendor/lib64/libsdmcore.so|79cfcb22b02773f7a3c3b86be997782dd594863a
-
 # Graphics - from LA.UM.8.6.r1-03400-89xx.0
 lib/libsdm-disp-apis.so:vendor/lib/libsdm-disp-apis.so|5b006423286008ba9b54b8c29e9ce2ab4b6fa14d
 lib64/libsdm-disp-apis.so:vendor/lib64/libsdm-disp-apis.so|25391818f65a4dfe3fdf0603109eacc4eedc4c13
