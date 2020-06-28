@@ -34,6 +34,11 @@ vendor/lib/com.qualcomm.qti.ant@1.0.so|a31ea1978c494b5723fdf37bca09f36a02cd168e
 vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so|987afcfe884b7e950521df831c714c5af75c3bb9
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|26b8f65554856649e12b7b3fce9622db9f77c3d9
 
+# Audiosphere - from LA.UM.8.6.r1-04400-89xx.0
+etc/permissions/audiosphere.xml|3c6d8f14bd99e52a424282fd5d0a5b9b06485dea 
+framework/audiosphere.jar|c1679f5aca56f0cb24745b3f7d219acd04833bed
+vendor/lib/soundfx/libasphere.so|4d0ccf1c282bb70619d20bf7d79021dc3815a579
+
 # Audio libraries - from LA.UM.8.6.r1-04000-89xx.0
 etc/permissions/audiosphere.xml|3c6d8f14bd99e52a424282fd5d0a5b9b06485dea
 framework/audiosphere.jar|4450751aad4c268c686fe9bc93da595e14c009d9
