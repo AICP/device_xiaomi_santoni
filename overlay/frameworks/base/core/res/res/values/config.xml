@@ -494,8 +494,4 @@
     <!-- System info -->
     <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone0/temp</string>
     <integer name="config_sysCPUTempMultiplier">1000</integer>
-
-    <!-- Whether to display touch sensitivity switch -->
-    <bool name="config_show_touch_sensitivity">true</bool>
-
 </resources>
