@@ -158,8 +158,7 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libldacBT_dec \
-    vendor.qti.hardware.btconfigstore@1.0.vendor
+    libldacBT_dec
 
 # Camera
 PRODUCT_PACKAGES += \
