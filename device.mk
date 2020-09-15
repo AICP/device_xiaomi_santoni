@@ -498,3 +498,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
    WfdCommon
+
+# Reduce system image size by limiting java debug info.
+PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
