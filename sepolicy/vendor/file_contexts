@@ -48,9 +48,6 @@
 /sys/devices(/platform)?/soc/leds-qpnp-[0-9]+/leds(/.*)?                                u:object_r:sysfs_leds:s0
 /sys/devices(/platform)?/soc/soc:gpio-leds/leds(/.*)?                                   u:object_r:sysfs_leds:s0
 
-# Power
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service\.custom     u:object_r:hal_power_default_exec:s0
-
 # Rild
 /(vendor|system/vendor)/radio/qcril_database/qcril.db			u:object_r:rild_file:s0
 
@@ -75,11 +72,7 @@
 # USB force fastcharge
 /sys/kernel/fast_charge/force_fast_charge                                     u:object_r:sysfs_fcharge:s0
 
-# Audio gains
-/sys/kernel/sound_control/headphone_gain                               u:object_r:sysfs_headphone_gain:s0
-/sys/kernel/sound_control/mic_gain                                     u:object_r:sysfs_mic_gain:s0
-/sys/kernel/sound_control/speaker_gain                                 u:object_r:sysfs_speaker_gain:s0
-
 # Vibration
-/sys/class/timed_output/vibrator/vmax_mv            u:object_r:sysfs_vibrator:s0
+/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator(/.*)?           u:object_r:sysfs_vibrator:s0
+/sys/class/timed_output/vibrator/vmax_mv             u:object_r:sysfs_vibrator:s0
 /sys/class/timed_output/vibrator/vtg_level           u:object_r:sysfs_vibrator:s0

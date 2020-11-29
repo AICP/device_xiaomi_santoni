@@ -8,6 +8,3 @@ wlan.driver.config         u:object_r:wifi_prop:s0
 wlan.driver.ath            u:object_r:wifi_prop:s0
 wifi.active.interface      u:object_r:wifi_prop:s0
 ctl.stop                   u:object_r:ctl_stop_prop:s0
-
-# Alarm
-ro.alarm_boot                   u:object_r:vendor_alarm_boot_prop:s0

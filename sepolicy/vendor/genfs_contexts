@@ -32,7 +32,6 @@ genfscon sysfs /devices/soc/qpnp-rtc-7/rtc              u:object_r:sysfs_rtc:s0
 # Touchscreen
 genfscon proc /touchpanel	u:object_r:proc_touchpanel:s0
 
-
 #PowerHal
 genfscon sysfs /bus/msm_subsys                                       u:object_r:sysfs_msm_subsys:s0
 
