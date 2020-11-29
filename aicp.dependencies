@@ -1,6 +1,6 @@
 [
   {
-    "repository":  "hemantbeast/android_kernel_xiaomi_santoni",
+    "repository":  "hemantbeast/kernel_xiaomi_santoni-4.9",
     "target_path": "kernel/xiaomi/santoni",
     "branch":      "q10.0"
   },
