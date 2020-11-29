@@ -25,11 +25,9 @@ import android.provider.Settings;
 
 import com.aicp.device.dirac.DiracUtils;
 import com.aicp.device.kcal.KcalUtils;
-import com.aicp.device.kcal.FileUtils;
+import com.aicp.device.thermal.ThermalUtils;
 
 public class Startup extends BroadcastReceiver implements KcalUtils {
-
-    private final FileUtils mFileUtils = new FileUtils();
 
     private static void restore(String file, boolean enabled) {
         if (file == null) {
@@ -44,7 +42,7 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
         new DiracUtils(context).onBootCompleted();
 
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
-            mFileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
+            Utils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_ENABLED, 0));
 
             String rgbValue = Settings.Secure.getInt(context.getContentResolver(),
@@ -54,18 +52,18 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
                     Settings.Secure.getInt(context.getContentResolver(), PREF_BLUE,
                             BLUE_DEFAULT);
 
-            mFileUtils.setValue(KCAL_RGB, rgbValue);
-            mFileUtils.setValue(KCAL_MIN, Settings.Secure.getInt(context.getContentResolver(),
+            Utils.setValue(KCAL_RGB, rgbValue);
+            Utils.setValue(KCAL_MIN, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_MINIMUM, MINIMUM_DEFAULT));
-            mFileUtils.setValue(KCAL_SAT, Settings.Secure.getInt(context.getContentResolver(),
+            Utils.setValue(KCAL_SAT, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_GRAYSCALE, 0) == 1 ? 128 :
                     Settings.Secure.getInt(context.getContentResolver(),
                             PREF_SATURATION, SATURATION_DEFAULT) + SATURATION_OFFSET);
-            mFileUtils.setValue(KCAL_VAL, Settings.Secure.getInt(context.getContentResolver(),
+            Utils.setValue(KCAL_VAL, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_VALUE, VALUE_DEFAULT) + VALUE_OFFSET);
-            mFileUtils.setValue(KCAL_CONT, Settings.Secure.getInt(context.getContentResolver(),
+            Utils.setValue(KCAL_CONT, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_CONTRAST, CONTRAST_DEFAULT) + CONTRAST_OFFSET);
-            mFileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
+            Utils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_HUE, HUE_DEFAULT));
         }
     }
@@ -75,6 +73,7 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
         boolean enabled = Settings.System.getInt(context.getContentResolver(), FastChargeSwitch.SETTINGS_KEY, 0) != 0;
         restore(FastChargeSwitch.getFile(), enabled);
 
+        ThermalUtils.initialize(context);
         VibratorStrengthPreference.restore(context);
         /*HeadphoneGainPreference.restore(context);
         MicGainPreference.restore(context);

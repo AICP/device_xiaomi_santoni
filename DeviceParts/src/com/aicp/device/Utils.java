@@ -19,12 +19,17 @@
 package com.aicp.device;
 
 import android.util.Log;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.NullPointerException;
+import java.lang.SecurityException;
 
 public class Utils {
 
@@ -108,6 +113,10 @@ public class Utils {
             return false;
         }
         return new File(filename).exists();
+    }
+
+    public static boolean fileReadable(String filename) {
+        return fileExists(filename) && new File(filename).canRead();
     }
 
     public static boolean fileWritable(String filename) {
@@ -206,5 +215,118 @@ public class Utils {
         }
         if (DEBUG) Log.e(TAG,"getFileValueDual: file / default value:"+filename+" / "+defValue);
         return defValue;
+    }
+
+    public static void setValue(String path, Boolean value) {
+        if (fileWritable(path)) {
+            if (path == null) {
+                return;
+            }
+            try {
+                FileOutputStream fos = new FileOutputStream(new File(path));
+                fos.write((value ? "1" : "0").getBytes());
+                fos.flush();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void setValue(String path, int value) {
+        if (fileWritable(path)) {
+            if (path == null) {
+                return;
+            }
+            try {
+                FileOutputStream fos = new FileOutputStream(new File(path));
+                fos.write(Integer.toString(value).getBytes());
+                fos.flush();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void setValue(String path, String value) {
+        if (fileWritable(path)) {
+            if (path == null) {
+                return;
+            }
+            try {
+                FileOutputStream fos = new FileOutputStream(new File(path));
+                fos.write(value.getBytes());
+                fos.flush();
+                fos.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Writes the given value into the given file
+     *
+     * @return true on success, false on failure
+     */
+    public static boolean writeLine(String fileName, String value) {
+        BufferedWriter writer = null;
+
+        try {
+            writer = new BufferedWriter(new FileWriter(fileName));
+            writer.write(value);
+        } catch (FileNotFoundException e) {
+            Log.w(TAG, "No such file " + fileName + " for writing", e);
+            return false;
+        } catch (IOException e) {
+            Log.e(TAG, "Could not write to file " + fileName, e);
+            return false;
+        } finally {
+            try {
+                if (writer != null) {
+                    writer.close();
+                }
+            } catch (IOException e) {
+                // Ignored, not much we can do anyway
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Deletes an existing file
+     *
+     * @return true if the delete was successful, false if not
+     */
+    public static boolean delete(String fileName) {
+        final File file = new File(fileName);
+        boolean ok = false;
+        try {
+            ok = file.delete();
+        } catch (SecurityException e) {
+            Log.w(TAG, "SecurityException trying to delete " + fileName, e);
+        }
+        return ok;
+    }
+
+    /**
+     * Renames an existing file
+     *
+     * @return true if the rename was successful, false if not
+     */
+    public static boolean rename(String srcPath, String dstPath) {
+        final File srcFile = new File(srcPath);
+        final File dstFile = new File(dstPath);
+        boolean ok = false;
+        try {
+            ok = srcFile.renameTo(dstFile);
+        } catch (SecurityException e) {
+            Log.w(TAG, "SecurityException trying to rename " + srcPath + " to " + dstPath, e);
+        } catch (NullPointerException e) {
+            Log.e(TAG, "NullPointerException trying to rename " + srcPath + " to " + dstPath, e);
+        }
+        return ok;
     }
 }
