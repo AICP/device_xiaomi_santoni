@@ -42,9 +42,9 @@ public class DeviceSettings extends PreferenceFragment implements
     private Preference mKcal;
     private Preference mDirac;
 
-    private HeadphoneGainPreference mHeadphoneGainPref;
+    /*private HeadphoneGainPreference mHeadphoneGainPref;
     private MicGainPreference mMicGainPref;
-    private SpeakerGainPreference mSpeakerGainPref;
+    private SpeakerGainPreference mSpeakerGainPref;*/
 
     private static TwoStatePreference mFastChargeSwitch;
 
@@ -78,7 +78,7 @@ public class DeviceSettings extends PreferenceFragment implements
             mFastChargeSwitch.setOnPreferenceChangeListener(new FastChargeSwitch(getContext()));
         }
 
-        mHeadphoneGainPref = (HeadphoneGainPreference) findPreference(KEY_HEADPHONE_GAIN);
+        /*mHeadphoneGainPref = (HeadphoneGainPreference) findPreference(KEY_HEADPHONE_GAIN);
         mMicGainPref = (MicGainPreference) findPreference(KEY_MIC_GAIN);
         mSpeakerGainPref = (SpeakerGainPreference) findPreference(KEY_SPEAKER_GAIN);
 
@@ -92,7 +92,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
         if (mSpeakerGainPref != null) {
             mSpeakerGainPref.setEnabled(true);
-        }
+        }*/
     }
 
     @Override

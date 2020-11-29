@@ -76,8 +76,8 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
         restore(FastChargeSwitch.getFile(), enabled);
 
         VibratorStrengthPreference.restore(context);
-        HeadphoneGainPreference.restore(context);
+        /*HeadphoneGainPreference.restore(context);
         MicGainPreference.restore(context);
-        SpeakerGainPreference.restore(context);
+        SpeakerGainPreference.restore(context);*/
     }
 }

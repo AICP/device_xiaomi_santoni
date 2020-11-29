@@ -47,7 +47,7 @@
         </Preference>
     </PreferenceCategory>
 
-    <PreferenceCategory
+    <!--<PreferenceCategory
         android:key="category_audiogains"
         android:title="@string/category_audiogains">
         <com.aicp.device.HeadphoneGainPreference
@@ -68,7 +68,7 @@
             android:icon="@drawable/ic_speaker_gain"
             android:summary="@string/speaker_gain_summary"
             android:persistent="false" />
-    </PreferenceCategory>
+    </PreferenceCategory>-->
 
     <PreferenceCategory
         android:key="usb_fastcharge"
