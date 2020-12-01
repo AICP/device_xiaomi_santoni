@@ -33,7 +33,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceManager;
 import androidx.preference.PreferenceViewHolder;
 
-public class VibratorStrengthPreference extends Preference implements
+public class VibratorNotifStrengthPreference extends Preference implements
         SeekBar.OnSeekBarChangeListener {
 
     private SeekBar mSeekBar;
@@ -42,10 +42,10 @@ public class VibratorStrengthPreference extends Preference implements
     private int mMaxValue;
     private Vibrator mVibrator;
 
-    private static final String FILE_LEVEL = "/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator/vmax_mv_user";
+    private static final String FILE_LEVEL = "/sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator/vmax_mv_strong";
     private static final long testVibrationPattern[] = {0,250};
 
-    public VibratorStrengthPreference(Context context, AttributeSet attrs) {
+    public VibratorNotifStrengthPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
         mMinValue = 1578;
         mMaxValue = 3596;
@@ -76,7 +76,7 @@ public class VibratorStrengthPreference extends Preference implements
 	private void setValue(String newValue, boolean withFeedback) {
 	    Utils.writeValue(FILE_LEVEL, newValue);
         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(getContext()).edit();
-        editor.putString(DeviceSettings.KEY_VIBSTRENGTH, newValue);
+        editor.putString(DeviceSettings.KEY_NOTIF_VIBSTRENGTH, newValue);
         editor.commit();
 	}
 
@@ -85,7 +85,7 @@ public class VibratorStrengthPreference extends Preference implements
             return;
         }
 
-        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_VIBSTRENGTH, "2726");
+        String storedValue = PreferenceManager.getDefaultSharedPreferences(context).getString(DeviceSettings.KEY_NOTIF_VIBSTRENGTH, "2726");
         Utils.writeValue(FILE_LEVEL, storedValue);
     }
 

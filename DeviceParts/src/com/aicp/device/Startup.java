@@ -75,6 +75,8 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
 
         ThermalUtils.initialize(context);
         VibratorStrengthPreference.restore(context);
+        VibratorCallStrengthPreference.restore(context);
+        VibratorNotifStrengthPreference.restore(context);
         /*HeadphoneGainPreference.restore(context);
         MicGainPreference.restore(context);
         SpeakerGainPreference.restore(context);*/

@@ -140,4 +140,10 @@
     <string name="thermal_dialer">Dialer</string>
     <string name="thermal_gaming">Gaming</string>
     <string name="thermal_streaming">Streaming</string>
+
+    <!-- Vibration control -->
+    <string name="vib_call_strength_title_head">Call</string>
+    <string name="vib_call_strength_summary_head">Define the strength of the vibrator during an incoming call</string>
+    <string name="vib_notif_strength_title_head">Notification</string>
+    <string name="vib_notif_strength_summary_head">Define the strength of the vibrator during an incoming notification</string>
 </resources>

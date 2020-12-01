@@ -30,6 +30,8 @@ public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     public static final String KEY_VIBSTRENGTH = "vib_strength";
+    public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
+    public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
     public static final String KEY_KCAL = "device_kcal";
     public static final String KEY_DIRAC = "device_dirac";
     public static final String KEY_FASTCHARGE = "fastcharge";
@@ -39,6 +41,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_SETTINGS_PREFIX = "device_setting_";
 
     private VibratorStrengthPreference mVibratorStrength;
+    private VibratorCallStrengthPreference mVibratorCallStrength;
+    private VibratorNotifStrengthPreference mVibratorNotifStrength;
     private Preference mKcal;
     private Preference mDirac;
 
@@ -69,6 +73,16 @@ public class DeviceSettings extends PreferenceFragment implements
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
+        }
+
+        mVibratorCallStrength = (VibratorCallStrengthPreference) findPreference(KEY_CALL_VIBSTRENGTH);
+        if (mVibratorCallStrength != null) {
+            mVibratorCallStrength.setEnabled(VibratorCallStrengthPreference.isSupported());
+        }
+
+        mVibratorNotifStrength = (VibratorNotifStrengthPreference) findPreference(KEY_NOTIF_VIBSTRENGTH);
+        if (mVibratorNotifStrength != null) {
+            mVibratorNotifStrength.setEnabled(VibratorNotifStrengthPreference.isSupported());
         }
 
         mFastChargeSwitch = (TwoStatePreference) findPreference(KEY_FASTCHARGE);
