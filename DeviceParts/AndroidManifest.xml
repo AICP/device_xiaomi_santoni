@@ -4,6 +4,7 @@
     package="com.aicp.device"
     android:sharedUserId="android.uid.system" >
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.INJECT_EVENTS" />
@@ -101,5 +102,19 @@
             android:name=".thermal.ThermalService"
             android:permission="ThermalService">
         </service>
+
+        <service android:name=".doze.DozeService"
+                 android:permission="DozeService">
+        </service>
+
+        <activity
+            android:name=".doze.DozeSettingsActivity"
+            android:label="@string/ambient_display_title"
+            android:theme="@style/Theme.Main">
+            <intent-filter>
+                <action android:name="com.aicp.settings.device.DOZE_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>

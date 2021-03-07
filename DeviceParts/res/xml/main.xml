@@ -73,7 +73,7 @@
     <PreferenceCategory
         android:key="usb_fastcharge"
         android:title="@string/usb_fastcharge_title" >
-        <SwitchPreference
+        <com.aicp.gear.preference.SecureSettingSwitchPreference
             android:key="fastcharge"
             android:summary="@string/fastcharge_summary"
             android:title="@string/fastcharge_title"

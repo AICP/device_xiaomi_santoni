@@ -23,8 +23,9 @@ import androidx.preference.Preference;
 
 import com.aicp.device.R;
 import com.aicp.device.CustomSeekBarPreference;
-import com.aicp.device.SecureSettingSwitchPreference;
 import com.aicp.device.Utils;
+
+import com.aicp.gear.preference.SecureSettingSwitchPreference;
 
 public class KCalSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener, KcalUtils {

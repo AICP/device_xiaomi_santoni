@@ -14,12 +14,12 @@
      limitations under the License.
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.aicp.device.SecureSettingSwitchPreference
+    <com.aicp.gear.preference.SecureSettingSwitchPreference
         android:defaultValue="false"
         android:key="kcal_enabled"
         android:title="@string/kcal_disabled" />
 
-    <com.aicp.device.SecureSettingSwitchPreference
+    <com.aicp.gear.preference.SecureSettingSwitchPreference
         android:defaultValue="false"
         android:dependency="kcal_enabled"
         android:key="set_on_boot"
@@ -91,7 +91,7 @@
             android:max="1536"
             android:title="@string/hue" />
 
-        <com.aicp.device.SecureSettingSwitchPreference
+        <com.aicp.gear.preference.SecureSettingSwitchPreference
             android:defaultValue="false"
             android:dependency="kcal_enabled"
             android:key="grayscale"
