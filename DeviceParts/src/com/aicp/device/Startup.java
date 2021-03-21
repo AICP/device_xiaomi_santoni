@@ -27,7 +27,6 @@ import android.util.Log;
 import com.aicp.device.dirac.DiracUtils;
 import com.aicp.device.doze.DozeUtils;
 import com.aicp.device.kcal.KcalUtils;
-import com.aicp.device.thermal.ThermalUtils;
 
 public class Startup extends BroadcastReceiver implements KcalUtils {
 
@@ -83,7 +82,6 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
         boolean enabled = Settings.System.getInt(context.getContentResolver(), FastChargeSwitch.SETTINGS_KEY, 0) != 0;
         restore(FastChargeSwitch.getFile(), enabled);
 
-        ThermalUtils.initialize(context);
         VibratorStrengthPreference.restore(context);
         VibratorCallStrengthPreference.restore(context);
         VibratorNotifStrengthPreference.restore(context);
