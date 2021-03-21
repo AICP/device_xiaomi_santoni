@@ -25,13 +25,9 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.aicp.device.dirac.DiracUtils;
-import com.aicp.device.doze.DozeUtils;
 import com.aicp.device.kcal.KcalUtils;
 
 public class Startup extends BroadcastReceiver implements KcalUtils {
-
-    private static final boolean DEBUG = false;
-    private static final String TAG = "Doze";
 
     private static void restore(String file, boolean enabled) {
         if (file == null) {
@@ -42,11 +38,6 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
 
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
-        if (DozeUtils.isDozeEnabled(context) && DozeUtils.sensorsEnabled(context)) {
-            if (DEBUG) Log.d(TAG, "Starting Doze service");
-            DozeUtils.startService(context);
-        }
-
         restoreAfterUserSwitch(context);
         new DiracUtils(context).onBootCompleted();
 
@@ -78,7 +69,6 @@ public class Startup extends BroadcastReceiver implements KcalUtils {
     }
 
     public static void restoreAfterUserSwitch(Context context) {
-
         boolean enabled = Settings.System.getInt(context.getContentResolver(), FastChargeSwitch.SETTINGS_KEY, 0) != 0;
         restore(FastChargeSwitch.getFile(), enabled);
 

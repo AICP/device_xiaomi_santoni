@@ -182,7 +182,8 @@ include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
 # DeviceParts
 PRODUCT_PACKAGES += \
-    DeviceParts
+    DeviceParts \
+    Doze
 
 # Display
 PRODUCT_PACKAGES += \
