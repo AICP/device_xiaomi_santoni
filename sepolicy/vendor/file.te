@@ -35,3 +35,5 @@ type sysfs_fcharge, sysfs_type, fs_type;
 
 type sysfs_msm_subsys, sysfs_type, fs_type;
 
+# SystemUI
+type sysfs_device_info, fs_type, sysfs_type;
