@@ -20,7 +20,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
 $(call inherit-product, vendor/xiaomi/santoni/santoni-vendor.mk)
-$(call inherit-product, vendor/lawnchair/lawnchair.mk)
 
 #HAls
 PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/msm8996/display
@@ -29,12 +28,10 @@ PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/msm8996/media
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay
 
 # RRO (Runtime Resource Overlay)
 PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += $(LOCAL_PATH)/overlay-lineage/lineage-sdk
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -186,8 +183,7 @@ include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Settings \
-    Lawnchair
+    Settings
 
 # Display
 PRODUCT_PACKAGES += \
@@ -465,10 +461,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
 
-# Touch HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.xiaomi_8937
-
 # USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
@@ -507,7 +499,7 @@ PRODUCT_COPY_FILES += \
 
 # Wi-Fi Display
 PRODUCT_BOOT_JARS += \
-   WfdCommon
+    WfdCommon
 
 PRODUCT_PACKAGES += \
     libnl
@@ -515,10 +507,6 @@ PRODUCT_PACKAGES += \
 #XiaomiAddon
 PRODUCT_PACKAGES += \
     XiaomiAddon
-
-#Prebuilts
-PRODUCT_PACKAGES += \
-    RemovePackages
 
 # Do not spin up a separate process for the network stack, use an in-process APK.
 PRODUCT_PACKAGES += InProcessNetworkStack

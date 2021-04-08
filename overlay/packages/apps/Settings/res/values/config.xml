@@ -16,5 +16,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <bool name="config_enableManualSubProvisioning">true</bool>
-	
+
+    <!-- Whether to display touch sensitivity switch -->
+    <bool name="config_show_touch_sensitivity">true</bool>
 </resources>
