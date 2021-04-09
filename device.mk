@@ -181,6 +181,10 @@ PRODUCT_PACKAGES += \
 # Charger
 include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
+# Device-specific settings
+PRODUCT_PACKAGES += \
+    DeviceParts
+
 # Dex
 PRODUCT_DEXPREOPT_SPEED_APPS += \
     Settings
@@ -503,10 +507,6 @@ PRODUCT_BOOT_JARS += \
 
 PRODUCT_PACKAGES += \
     libnl
-
-#XiaomiAddon
-PRODUCT_PACKAGES += \
-    XiaomiAddon
 
 # Do not spin up a separate process for the network stack, use an in-process APK.
 PRODUCT_PACKAGES += InProcessNetworkStack

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+    package="com.aicp.device"
+    android:sharedUserId="android.uid.system" >
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.INJECT_EVENTS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-sdk
+        android:minSdkVersion="26"
+        android:targetSdkVersion="29" />
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/device_title"
+        android:theme="@style/AppTheme"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        tools:replace="android:appComponentFactory"
+        android:supportsRtl="true" >
+        <activity
+            android:name=".DeviceSettingsActivity"
+            android:label="@string/device_title">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_settings_device" />
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/device_summary" />
+        </activity>
+        <activity-alias
+            android:name="com.aicp.device.DeviceSettings"
+            android:exported="true"
+            android:label="@string/advanced_settings"
+            android:targetActivity="DeviceSettingsActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity-alias>
+        <receiver android:name="com.aicp.device.Startup" >
+            <intent-filter android:priority="100" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".kcal.KCalSettingsActivity"
+            android:exported="false"
+            android:label="@string/advanced_settings_kcal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".dirac.DiracActivity"
+            android:label="@string/dirac_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".dirac.DiracTileService"
+            android:icon="@drawable/dirac_qs_tile_icon"
+            android:label="@string/dirac_qs_tile_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>
