@@ -32,10 +32,10 @@ PRODUCT_NAME := aicp_santoni
 BOARD_VENDOR := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
+USER_BUILD_NO_CHANGELOG := true
+
 # Boot animation
 TARGET_BOOT_ANIMATION_RES := 1080
-
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="santoni-user 7.1.2 N2G47H V9.5.10.0.NAMMIFD release-keys"
@@ -46,3 +46,5 @@ BUILD_FINGERPRINT := "Xiaomi/santoni/santoni:7.1.2/N2G47H/V9.5.10.0.NAMMIFD:user
 # AICP Device Maintainers
 PRODUCT_BUILD_PROP_OVERRIDES += \
     DEVICE_MAINTAINERS="Hemant Sharma (hemantbeast)"
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
