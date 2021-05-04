@@ -12,9 +12,7 @@ LOCAL_PACKAGE_NAME := DeviceParts
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true
-LOCAL_RESOURCE_DIR := \
-    $(LOCAL_PATH)/res \
-    $(TOP)/packages/resources/deviceparts/res
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 
 LOCAL_USE_AAPT2 := true
 
@@ -25,8 +23,6 @@ package_resource_overlays := $(strip \
       $(addprefix $(dir)/, packages/apps/DeviceParts/res))))
 
 LOCAL_RESOURCE_DIR := $(package_resource_overlays) $(LOCAL_RESOURCE_DIR)
-
-LOCAL_JAVA_LIBRARIES := telephony-common
 
 LOCAL_PROGUARD_ENABLED := disabled
 LOCAL_DEX_PREOPT := false
