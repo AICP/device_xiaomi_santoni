@@ -98,7 +98,7 @@
 
         <com.aicp.device.VibratorNotifStrengthPreference
             android:key="vib_notif_strength"
-            android:icon="@drawable/ic_notif"
+            android:icon="@drawable/ic_notifications"
             android:title="@string/vib_notif_strength_title_head"
             android:summary="@string/vib_notif_strength_summary_head" />
     </PreferenceCategory>

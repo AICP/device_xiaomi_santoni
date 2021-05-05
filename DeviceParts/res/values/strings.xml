@@ -14,6 +14,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    
+    <string name="device_title">Additional device settings</string>
+    <string name="device_summary">Adjust unique device settings</string>
+    <string name="advanced_settings">Advanced settings</string>
+
+    <!-- Ambient Display -->
+    <string name="category_doze">Ambient Display</string>
+    <string name="doze_category_title">Notifications</string>
+    <string name="doze_category_summary">Configure when to wake screen for notifications</string>
+
+    <!-- audio gain -->
+    <string name="category_audio">Audio</string>
+    <string name="category_audiogains">Audio gains</string>
+    <string name="headphone_gain_title">Headphone</string>
+    <string name="headphone_gain_summary">Adjust for headphones</string>
+    <string name="earpiece_gain_title">Earpiece</string>
+    <string name="earpiece_gain_summary">Adjust for earpiece</string>
+    <string name="mic_gain_title">Microphone</string>
+    <string name="mic_gain_summary">Adjust for microphone</string>
+    <string name="speaker_gain_title">Speakers</string>
+    <string name="speaker_gain_summary">Adjust for speakers</string>
 
     <!-- KCAL -->
     <string name="display_title">Display</string>
@@ -142,6 +163,9 @@
     <string name="thermal_streaming">Streaming</string>
 
     <!-- Vibration control -->
+    <string name="category_vibrator">Vibrator</string>
+    <string name="vib_strength_title">System</string>
+    <string name="vib_strength_summary">Define the generic strength of the vibrator</string>
     <string name="vib_call_strength_title_head">Call</string>
     <string name="vib_call_strength_summary_head">Define the strength of the vibrator during an incoming call</string>
     <string name="vib_notif_strength_title_head">Notification</string>
