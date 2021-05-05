@@ -1,9 +1,9 @@
 [
   {
-    "repository": "proprietary_vendor_xiaomi",
+    "repository": "hemantbeast/proprietary_vendor_xiaomi",
     "target_path": "vendor/xiaomi",
-    "branch": "q10.0",
-    "remote": "aicp"
+    "branch": "q10.0-new",
+    "remote": "gitlab"
   },
   {
     "repository": "hemantbeast/kernel_xiaomi_santoni-4.9",
